@@ -13,7 +13,7 @@ group: research
 
 ## G protein-coupled receptors
 
-<img class="img-fluid mx-auto d-block" src="/static/img/pub/gpcrtree.jpg" alt="GPCRs" height="600" width="600">
+<img class="img-fluid mx-auto d-block" src="{{site.baseurl}}/static/img/pub/gpcrtree.jpg" alt="GPCRs" height="600" width="600">
 
 
 
@@ -23,4 +23,4 @@ group: research
 
 ## Transporters
 
-<img class="img-fluid mx-auto d-block" src="/static/img/pub/rv1819c.jpg" alt="Transporters" height="600" width="600">
+<img class="img-fluid mx-auto d-block" src="{{site.baseurl}}/static/img/pub/rv1819c.jpg" alt="Transporters" height="600" width="600">
