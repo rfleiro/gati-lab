@@ -1,0 +1,27 @@
+- name: Cornelius Gati
+  image: /static/img/members/Fraser.jpg
+  position: Principal Investigator
+  email: cgati (at) stanford.edu
+  scholar:
+  twitter: CorneliusGati
+  orcid:
+  github: gatic
+  description: ""
+
+- name: Nanda Gowtham Aduri
+  image:
+  altimage:
+  position: PostDoctoral Fellow
+  email: aduri (at) stanford.edu
+  scholar:
+  twitter:
+  github:
+  orcid:
+  description: ""
+
+- name: Naoki Horikoshi
+  image:
+  altimage:
+  position: Visiting Scientist
+  email:
+  description: ""
