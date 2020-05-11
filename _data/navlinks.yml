@@ -3,27 +3,27 @@
   group: home
 
 - name: research
-  link: "/research"
+  link: "/gati-lab/research"
   group: research
 
 - name: publications
-  link: "/publications"
+  link: "/gati-lab/publications"
   group: publications
 
 - name: members
-  link: "/members"
+  link: "/gati-lab/members"
   group: members
 
 - name: teaching
-  link: "/courses"
+  link: "/gati-lab/courses"
   group: courses
 
 - name: news
-  link: "/news"
+  link: "/gati-lab/news"
   group: news
 
 - name: contact
-  link: "/contact"
+  link: "/gati-lab/contact"
   group: contact
 
 # - name: links

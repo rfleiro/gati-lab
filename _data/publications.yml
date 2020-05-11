@@ -53,7 +53,7 @@
 - citation: "S Rempel, **C Gati**, M Nijland, C Thangaratnarajah, A Karyolaimos, JW de Gier, A Guskov, DJ Slotboom.
 A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds. *Nature.* 2020."
   date: '202004'
-  image: '/static/img/pub/202004-rv1819c.png'
+  image: '/gati-lab/static/img/pub/202004-rv1819c.png'
   pmid: '32296172'
   paired_maps_and_models:
       - pdb: 6TQF
@@ -79,7 +79,7 @@ A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds. *N
 T Nakane, R Tanaka, K Tono, Y Joti, S Iwata, I Moraes, **C Gati**, V Cherezov.
 Toward G protein-coupled receptor structure-based drug design using X-ray lasers. *IUCrJ.* 2020."
   date: '201911'
-  image: '/static/img/pub/201911-gpcr.jpg'
+  image: '/gati-lab/static/img/pub/201911-gpcr.jpg'
   # pmid: ''
   # pmcid: ''
   #biorxiv: '2020.04.14.041772'
@@ -106,7 +106,7 @@ A Ishchenko, W Brehm, TA White, N Michaelian, C Madsen, L Zhu, TD Grant, JM Gran
 AR Tribo, S Yous, RC Stevens, U Weierstall, V Katritch, BL Roth, W Liu, V Cherezov.
 Structural basis of ligand recognition at the human MT 1 melatonin receptor. *Nature.* 2019."
   date: '201905'
-  image: '/static/img/pub/201905-mt1.png'
+  image: '/gati-lab/static/img/pub/201905-mt1.png'
   pmid: '31019306'
   pdbs:
       - 6ME2
