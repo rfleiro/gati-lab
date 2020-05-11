@@ -1,8 +1,0 @@
-/* styles to support the JSmol applet port for enhanced figures
-*/
-.jmolPopupMenu {
-    z-index: 900000;
-}
-#jmolApplet0_appletdiv { 
-  z-index: 10 !important;
-}
