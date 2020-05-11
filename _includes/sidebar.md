@@ -3,18 +3,15 @@ title: Contact
 ---
 
 
-### Contact the Fraser Lab
+### Contact the Gati Lab
 
-James Fraser, Ph.D.
-Associate Professor
-Department of Bioengineering and Therapeutic Sciences
-California Institute of Quantitative Biosciences (QB3)
+Cornelius Gati, Dr. rer. nat.
+Panofsky Fellow, Group leader
+Biosciences Division, SLAC National Lab
+Department of Structural Biology, School of Medicine, Stanford University
 
-email: jfraser (#!) fraserlab.com
-tel: 415 493 842 one
-fax: 415 514 016 nine
+email: cgati@stanford.edu
 
-Genentech Hall Room S472E (Office), S476 (Lab)
-UCSF Mail Code 2240
-600 16th Street
-San Francisco, CA 94158
+Arrillaga Science Center, Building 57, Room 2040-E
+2575 Sand Hill Rd
+Menlo Park, CA 94025
