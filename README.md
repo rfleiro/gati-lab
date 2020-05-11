@@ -1,4 +1,4 @@
-# gati-lab.github.io
+# gatilab.github.io
 ====================
 
 Technologies this website uses:  
