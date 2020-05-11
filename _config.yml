@@ -1,7 +1,8 @@
 name: "Gati Lab"
 description: "This is the official web page for the Cornelius Gati Lab at SLAC National Lab."
 
-url: "https://gatic.github.io/gati-lab/"
+url: "https://gatic.github.io/"
+baseurl: "/gati-lab"
 
 paginate: 5
 plugins: [jekyll-paginate]
