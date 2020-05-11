@@ -1,0 +1,20 @@
+<h3>Contact Us</h3>
+<p>
+Cornelius Gati, Dr. rer. nat. <br>
+Panofsky Fellow, Group leader <br>
+Biosciences Division, SLAC National Lab <br>
+Department of Structural Biology, School of Medicine, Stanford University<br>
+<br>
+email: cgati@stanford.edu <br>
+<br>
+ASC, Building 57, Room 2040-E <br>
+2575 Sand Hill Rd <br>
+Menlo Park, CA 94025 <br>
+</p>
+
+<h3> Recent Posts </h3>
+<ul>
+  {% for post in site.posts limit: 5 %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,91 @@
+/*
+artfig.css
+
+Transitional CSS. An empty artfig.css file was implemented as a
+   placeholder for the old style 0f journals. We use this existing
+   file name to hack existing code by overriding undesirable old style
+   attributes retained in legacy code.
+
+It is desirable to implement workflow changes to render this file
+   unnecessary.
+*/
+
+
+/* --------------- ENHANCED FIGURES -------------- */
+
+table#java { 
+  background-color: #efefef;
+  border: none;
+}
+
+table#java td { 
+  border: none;
+}
+
+table#java td:first-child + td { 
+  padding-left: 24px;
+}
+
+table#java tr:first-child + tr { 
+  padding-right: 120px;
+}
+
+table#nonjava input[type="button"]:hover,
+table#java input[type="button"]:hover { 
+  text-decoration: underline;
+}
+
+table#nonjava input[type="button"],
+table#java input[type="button"] { 
+  font-family: Verdana,Arial,Helvetica,sans-serif;
+  color: #003366;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: .5em;
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-top: .5em;
+  align: center;
+  moz-border-bottom-colors: none;
+  moz-border-left-colors: none;
+  moz-border-right-colors: none;
+  moz-border-top-colors: none;
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: #ddd;
+  background-image: none;
+  background-origin: padding-box;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto auto;
+  border: 1px solid rgb(170, 170, 170);
+  border-bottom-color: rgb(187, 187, 187);
+  border-bottom-style: outset;
+  border-bottom-width: 2px;
+  border-image-outset: 0 0 0 0;
+  border-image-repeat: stretch stretch;
+  border-image-slice: 100% 100% 100% 100%;
+  border-image-source: none;
+  border-image-width: 1 1 1 1;
+  border-top-color: rgb(187, 187, 187);
+  border-top-style: outset;
+  border-top-width: 2px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+table#nonjava table, table#java table { 
+  width: 200px;
+  border: none !important;
+ }
+
+table#java span { 
+  display: block;
+  padding-left: 10px;
+}
+
+table#java span label { 
+  position: relative;
+}

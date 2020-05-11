@@ -1,0 +1,13 @@
+name: "Gati Lab"
+description: "This is the official web page for the Cornelius Gati Lab at SLAC National Lab."
+
+url: "http://gatilab.com"
+
+paginate: 5
+plugins: [jekyll-paginate]
+paginate_path: "news/page:num"
+
+permalink: pretty
+markdown: kramdown
+kramdown:
+  parse_block_html: true
