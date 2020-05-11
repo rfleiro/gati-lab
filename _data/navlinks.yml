@@ -1,29 +1,29 @@
 - name: home
-  link: "/"
+  link: "https://gatic.github.io/gati-lab/"
   group: home
 
 - name: research
-  link: "/research"
+  link: "https://gatic.github.io/gati-lab/research"
   group: research
 
 - name: publications
-  link: "/publications"
+  link: "https://gatic.github.io/gati-lab/publications"
   group: publications
 
 - name: members
-  link: "/members"
+  link: "https://gatic.github.io/gati-lab/members"
   group: members
 
 - name: teaching
-  link: "/courses"
+  link: "https://gatic.github.io/gati-lab/courses"
   group: courses
 
 - name: news
-  link: "/news"
+  link: "https://gatic.github.io/gati-lab/news"
   group: news
 
 - name: contact
-  link: "/contact"
+  link: "https://gatic.github.io/gati-lab/contact"
   group: contact
 
 # - name: links
