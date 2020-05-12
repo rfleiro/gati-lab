@@ -13,9 +13,6 @@ group: members
     <div class="col-sm-4">
         <img class="img-fluid" src="{{site.baseurl}}{{person.image}}" {% if person.altimage %} onmouseover="this.src='{{site.baseurl}}{{person.altimage}}';" onmouseout="this.src='{{site.baseurl}}{{person.image}}';" {% endif %} alt="{{person.name}}"; width="365"; height="365"><br>
         <strong>{{person.name}}</strong> <br>
-        {% if person.pronouns %}
-          <em>{{person.pronouns}}</em> <br>
-        {% endif %}
         {{person.position}} <br>
         <em>{{person.email}}</em> <br>
         {% if person.website %}
