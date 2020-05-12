@@ -6,7 +6,7 @@ group: submit
 
 <br><br>
 
-**Check out our [cryo-recipes database](https://cryo-recipes.slac.stanford.edu).** <br>
+**Check out our [cryo-recipes database](https://cryo-recipes.slac.stanford.edu), which is an assembly of membrane protein cryoEM structures. We tried to capture everything from purification, over grid preparation, to imaging. We hope this is useful to the community, so please feel free to reach out for feedback.** <br>
 
 **To submit an entry, simply copy/paste below, edit and send an email to: cgati (at) stanford.edu**
 
