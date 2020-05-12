@@ -1,5 +1,5 @@
 ---
-title: Our new manuscript out in Nature. A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds.!
+title: Our new manuscript out in Nature. A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds!
 author: Cornelius Gati
 date: 2020 March 25
 layout: post

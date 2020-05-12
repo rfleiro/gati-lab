@@ -4,7 +4,7 @@
   <title>Gati Lab News</title>
   <link href="http://localhost:4000"/>
   <link type="application/atom+xml" rel="self" href="http://localhost:4000/news.xml"/>
-  <updated>2020-05-12T11:36:08-07:00</updated>
+  <updated>2020-05-12T11:56:09-07:00</updated>
   <id>http://localhost:4000</id>
   <author>
     <name>Cornelius Gati</name>
@@ -15,7 +15,7 @@
   <entry>
     <id>http://localhost:4000/2020/03/25/MTB-Nature</id>
     <link type="text/html" rel="alternate" href="http://localhost:4000/2020/03/25/MTB-Nature/"/>
-    <title>Our new manuscript out in Nature. A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds.!</title>
+    <title>Our new manuscript out in Nature. A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds!</title>
     <published>2020-03-25T00:00:00-07:00</published>
     <updated>2020-03-25T00:00:00-07:00</updated>
     <author>
