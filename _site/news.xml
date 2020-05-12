@@ -4,7 +4,7 @@
   <title>Gati Lab News</title>
   <link href="http://localhost:4000"/>
   <link type="application/atom+xml" rel="self" href="http://localhost:4000/news.xml"/>
-  <updated>2020-05-11T22:09:01-07:00</updated>
+  <updated>2020-05-11T22:13:50-07:00</updated>
   <id>http://localhost:4000</id>
   <author>
     <name>Cornelius Gati</name>
@@ -22,9 +22,9 @@
       <name>Cornelius Gati</name>
       <uri>/2020/03/25/MTB-Nature/</uri>
     </author>
-    <content type="html">&lt;p&gt;We are very excited to share our new manuscript published today in Nature: ‘A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds’. Analogous to multidrug exporters, we describe the first promiscuous ABC transporter importer (with an exporter fold). Using single particle cryoEM, we identified an enormous cavity inside the transporter, which could explain this strange behavior. We propose that this unspecific import mechanism could be a general way for antibiotics to pass the membrane and get into bacteria.
+    <content type="html">&lt;p&gt;We are very excited to share our new manuscript published today in Nature: &lt;a href=&quot;https://www.nature.com/articles/s41586-020-2072-8&quot;&gt;‘A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds.’&lt;/a&gt; Analogous to multidrug exporters, we describe the first promiscuous ABC transporter importer (with an exporter fold). Using single particle cryoEM, we identified an enormous cavity inside the transporter, which could explain this strange behavior. We propose that this unspecific import mechanism could be a general way for antibiotics to pass the membrane and get into bacteria.
 &lt;br /&gt;
-Tuberculosis remains the most deadly infectious disease in the world and I hope this work contributes to the fight against it in some way. This has been yet another great collaboration with our colleagues Dirk Slotboom and Albert Guskov in Groningen. Also check out the back-to-back manuscript from the Seeger lab: &lt;a href=&quot;https://www.nature.com/articles/s41586-020-2136-9&quot;&gt;The ABC exporter IrtAB imports and reduces mycobacterial siderophore.&lt;/a&gt;&lt;/p&gt;
+Tuberculosis remains the most deadly infectious disease in the world and I hope this work contributes to the fight against it in some way. This has been yet another great collaboration with our colleagues Dirk Slotboom and Albert Guskov in Groningen. Also check out the back-to-back manuscript from the Seeger lab: &lt;a href=&quot;https://www.nature.com/articles/s41586-020-2136-9&quot;&gt;‘The ABC exporter IrtAB imports and reduces mycobacterial siderophore.’&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
   
