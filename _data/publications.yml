@@ -50,7 +50,7 @@
 #     - name: Celebratory Tweetstorm by corresponding author First Surname
 #       url: https://twitter.com/mctucsf/status/1172334750205218816
 ---
-- citation: "S Rempel, **C Gati\***, M Nijland, C Thangaratnarajah, A Karyolaimos, JW de Gier, A Guskov\*, DJ Slotboom\*. <br>
+- citation: "S Rempel, **C Gati**, M Nijland, C Thangaratnarajah, A Karyolaimos, JW de Gier, A Guskov, DJ Slotboom. <br>
 A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds. ***Nature.*** 2020."
   date: '202004'
   image: '/static/img/pub/202004-rv1819c.png'
