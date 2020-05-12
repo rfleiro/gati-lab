@@ -4,9 +4,11 @@ layout: default
 group: submit
 ---
 
-**Submit an entry to our [cryo-recipes database](https://cryo-recipes.slac.stanford.edu).** <br>
+<br><br>
 
-**Simply copy/paste below, edit and send an email to: cgati (at) stanford.edu**
+**Check out our [cryo-recipes database](https://cryo-recipes.slac.stanford.edu).** <br>
+
+**To submit an entry, simply copy/paste below, edit and send an email to: cgati (at) stanford.edu**
 
 {<br>
     "grid_preparation": {<br>
