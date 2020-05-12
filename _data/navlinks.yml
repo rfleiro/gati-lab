@@ -26,10 +26,10 @@
   link: "/contact"
   group: contact
 
-- name: submit-entry
+- name: cryo-recipes
   link: "/submit"
   group: submit
 
-- name: cryo-recipes
-  link: "https://cryo-recipes.slac.stanford.edu/"
-  group: recipes
+#- name: cryo-recipes
+#  link: "https://cryo-recipes.slac.stanford.edu/"
+#  group: recipes
