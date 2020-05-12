@@ -41,10 +41,11 @@
         <div class="navbar-collapse collapse" id="navbarContent">
           <ul class="navbar-nav ml-auto">
             {% for link in site.data.navlinks %}
+              {% if page.group == 'recipes' %}
+                <li class="nav-item active"><a class="nav-link" href="{{link.link}}" alt="{{link.name}}"> {{link.name}}<span class="sr-only">(current)</span></a></li>
+                {% endif %}
               {% if page.group == link.group %}
                 <li class="nav-item active"><a class="nav-link" href="{{site.baseurl}}{{link.link}}" alt="{{link.name}}"> {{link.name}}<span class="sr-only">(current)</span></a></li>
-              {% if page.group == recipes %}
-                <li class="nav-item active"><a class="nav-link" href="{{link.link}}" alt="{{link.name}}"> {{link.name}}<span class="sr-only">(current)</span></a></li>
               {% else %}
                 <li class="nav-item"><a class="nav-link" href="{{site.baseurl}}{{link.link}}" alt="{{link.name}}"> {{link.name}}</a></li>
               {% endif %}
