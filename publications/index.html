@@ -12,7 +12,12 @@ group: publications
 <div class="row" style="padding-top: 60px; margin-top: -60px;" id="{{publication.pmid}}">
 <div style="font-size: 120% !important;">{{ publication.citation | markdownify }}</div>
 	<div class="col-sm-6">
+		{% if publication.image %}
 		<img class = "img-fluid" src = "{{site.baseurl}}{{publication.image}}" alt = "Key Figure" style="max-height: 200px;">
+		{% endif %}
+		{% if publication.movie %}
+		<video src="{{site.baseurl}}{{publication.movie}}" width="320" height="200" controls preload></video>
+		{% endif %}
 	</div>
 	<ul class="col-sm-6">
 			<strong>Access the paper</strong>
@@ -42,7 +47,9 @@ group: publications
 			{% endif %}
 
 			<!-- PDF -->
+			{% if publication.pdf %}
 			<li><a href="{{publication.pdf}}" alt = "PDF"> Full Text</a></li>
+			{% endif %}
 
 			<!-- Datasets - optional -->
 			{% if publication.data %}

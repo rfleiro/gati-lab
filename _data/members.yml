@@ -13,19 +13,38 @@
   Since 2018 he is an independent group leader at SLAC National lab and the Stanford School of Medicine. His research focuses on the structure determination of important membrane proteins using cryoEM and X-ray crystallography."
 
 - name: Nanda Gowtham Aduri
-  image:
+  image: /static/img/members/nanda.jpg
   altimage:
   position: PostDoctoral Fellow
   email: aduri (at) stanford.edu
-  scholar:
+  scholar: umqvMqwAAAAJ
   twitter:
   github:
   orcid:
-  description: ""
+  description: "Nanda Gowtham Aduri finished his Ph.D. under the supervision of Osman Mirza at the University of Copenhagen, Denmark.
+  During his Ph.D., he mainly focused on determining the high-resolution 3D structures of Major Facilitator Superfamily Transporters,
+  using Cryo-Electron Microscopy (EM). He has also worked with functional characterization of these transporters using fluorescence,
+  radiolabeled, and/or label-free uptake assays using LC-MS.
+<br/><br/>
+Later, he moved on to be a Postdoc in the group of Michael Gajhede at the University of Copenhagen, where he worked with human
+histone-modifying enzymes and/or in complex with mono-nucleosomes.
+<br/><br/>
+Since 2019, he is working as a Postdoc in the Gati lab at SLAC National lab.
+His research focuses on the structural and functional characterization of various human solute carriers (SLC’s) using
+Cryo-EM and X-ray crystallography."
 
 - name: Naoki Horikoshi
-  image:
+  image: /static/img/members/naoki.jpg
   altimage:
   position: Visiting Scientist
-  email:
-  description: ""
+  email: horikosh (at) stanford.edu
+  scholar: QwgXZWMAAAAJ
+  twitter: NaokiHorikosh1
+  orcid: 0000-0003-1842-6934
+  description: "Naoki completed his Ph.D. in the lab of Hitoshi Kurumizaka at Waseda University, Japan.
+  <br/><br/>
+  After two-years of postdoc training in the Department of Structural Biology at Stanford University School of Medicine, he joined the University of Tsukuba, Japan as an assistant professor in 2019.
+  Naoki is currently learning  single-particle cryoEM in the Gati lab at SLAC National Accelerator Laboratory.
+  <br/><br/>
+  His research interest is to understand the structure and function of proteins associated with redox signaling, metabolic reprogramming,
+  and epigenetic regulation."

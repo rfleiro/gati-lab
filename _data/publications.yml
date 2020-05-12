@@ -50,10 +50,13 @@
 #     - name: Celebratory Tweetstorm by corresponding author First Surname
 #       url: https://twitter.com/mctucsf/status/1172334750205218816
 ---
+
 - citation: "S Rempel, **C Gati&#42;**, M Nijland, C Thangaratnarajah, A Karyolaimos, JW de Gier, A Guskov&#42;, DJ Slotboom&#42;. <br>
-A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds. ***Nature.*** 2020."
+A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds. <br><br>
+***Nature.*** 2020."
   date: '202004'
   image: '/static/img/pub/202004-rv1819c.png'
+  #movie: '/static/img/pub/gaba_small.mp4'
   pmid: '32296172'
   paired_maps_and_models:
       - pdb: 6TQF
@@ -68,16 +71,10 @@ A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds. **
     - name: Press Release @ SLAC Today
       url: https://www6.slac.stanford.edu/news/2020-03-25-slac-researcher-discovers-giant-cavity-key-tuberculosis-molecule.aspx
 
-
-
-
-
-  # pmcid: 'PMC#######'
-  # biorxiv: 'YYYY.MM.DD.######'
-
 - citation: "A Ishchenko, B Stauch, GW Han, A Batyuk, A Shiriaeva, C Li, N Zatsepin, U Weierstall, W Liu, E Nango,
 T Nakane, R Tanaka, K Tono, Y Joti, S Iwata, I Moraes, **C Gati**, V Cherezov. <br>
-Toward G protein-coupled receptor structure-based drug design using X-ray lasers. ***IUCrJ.*** 2019."
+Toward G protein-coupled receptor structure-based drug design using X-ray lasers. <br><br>
+***IUCrJ.*** 2019."
   date: '201911'
   image: '/static/img/pub/201911-gpcr.jpg'
   # pmid: ''
@@ -104,7 +101,8 @@ Toward G protein-coupled receptor structure-based drug design using X-ray lasers
 - citation: "B Stauch, LC Johansson, JD McCorvy, N Patel, GW Han, XP Huang, **C Gati**, A Batyuk, ST Slocum,
 A Ishchenko, W Brehm, TA White, N Michaelian, C Madsen, L Zhu, TD Grant, JM Grandner, A Shiriaeva, RHJ Olsen,
 AR Tribo, S Yous, RC Stevens, U Weierstall, V Katritch, BL Roth, W Liu, V Cherezov. <br>
-Structural basis of ligand recognition at the human MT 1 melatonin receptor. ***Nature.*** 2019."
+Structural basis of ligand recognition at the human MT 1 melatonin receptor. <br><br>
+***Nature.*** 2019."
   date: '201905'
   image: '/static/img/pub/201905-mt1.png'
   pmid: '31019306'
@@ -120,7 +118,8 @@ Structural basis of ligand recognition at the human MT 1 melatonin receptor. ***
 
 - citation: "LC Johansson, B Stauch, JD McCorvy, GW Han, N Patel, XP Huang, A Batyuk, **C Gati**, ST Slocum, C Li, JM Grandner,
 S Hao, RHJ Olsen, AR Tribo, S Zaare, L Zhu, NA Zatsepin, U Weierstall, S Yous, RC Stevens, W Liu, BL Roth, V Katritch, V Cherezov. <br>
-XFEL structures of the human MT2 melatonin receptor reveal the basis of subtype selectivity. ***Nature.*** 2019."
+XFEL structures of the human MT2 melatonin receptor reveal the basis of subtype selectivity. <br><br>
+***Nature.*** 2019."
   date: '201905'
   image: '/static/img/pub/201905-mt2.png'
   pmid: '31019305'
@@ -135,7 +134,25 @@ XFEL structures of the human MT2 melatonin receptor reveal the basis of subtype 
 
 
 - citation: "A Ishchenko, **C Gati**, V Cherezov. <br>
-Structural biology of G protein-coupled receptors: new opportunities from XFELs and cryoEM. ***Current Opinion in Structural Biology.*** 2018."
+Structural biology of G protein-coupled receptors: new opportunities from XFELs and cryoEM. <br><br>
+***Current Opinion in Structural Biology.*** 2018."
   date: '201808'
   image: '/static/img/pub/201808-COSB.jpg'
   pmid: '29554543'
+
+
+
+- citation: "AA Garaeva, GT Oostergetel, **C Gati**, A Guskov, C Paulino, DJ Slotboom. <br>
+Cryo-EM structure of the human neutral amino acid transporter ASCT2. <br><br>
+***Nature Structural and Molecular Biology.*** 2018."
+  date: '201806'
+  image: '/static/img/pub/201806_asct2.png'
+  pmid: '29872227'
+  paired_maps_and_models:
+      - pdb: 6GCT
+        emdb: '4386'
+  links:
+    - name: Slotboom lab @ Univ. Groningen
+      url: https://www.membraneenzymology.com/slotboom/
+    - name: Membrane Enzymology @ Univ. Groningen
+      url: https://www.membraneenzymology.com/
