@@ -77,7 +77,7 @@ A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds. **
 
 - citation: "A Ishchenko, B Stauch, GW Han, A Batyuk, A Shiriaeva, C Li, N Zatsepin, U Weierstall, W Liu, E Nango,
 T Nakane, R Tanaka, K Tono, Y Joti, S Iwata, I Moraes, **C Gati**, V Cherezov.
-Toward G protein-coupled receptor structure-based drug design using X-ray lasers. ***IUCrJ.*** 2020."
+Toward G protein-coupled receptor structure-based drug design using X-ray lasers. ***IUCrJ.*** 2019."
   date: '201911'
   image: '/static/img/pub/201911-gpcr.jpg'
   # pmid: ''
@@ -116,3 +116,25 @@ Structural basis of ligand recognition at the human MT 1 melatonin receptor. ***
   links:
     - name: Cherezov lab @ USC
       url: http://cherezov.usc.edu/
+
+
+- citation: "LC Johansson, B Stauch, JD McCorvy, GW Han, N Patel, XP Huang, A Batyuk, **C Gati**, ST Slocum, C Li, JM Grandner,
+S Hao, RHJ Olsen, AR Tribo, S Zaare, L Zhu, NA Zatsepin, U Weierstall, S Yous, RC Stevens, W Liu, BL Roth, V Katritch, V Cherezov.
+XFEL structures of the human MT2 melatonin receptor reveal the basis of subtype selectivity. ***Nature.*** 2019."
+  date: '201905'
+  image: '/static/img/pub/201905-mt2.png'
+  pmid: '31019305'
+  pdbs:
+      - 6ME6
+      - 6ME7
+      - 6ME8
+      - 6ME9
+  links:
+    - name: Cherezov lab @ USC
+      url: http://cherezov.usc.edu/
+
+
+- citation: "A Ishchenko, **C Gati**, V Cherezov.
+Structural biology of G protein-coupled receptors: new opportunities from XFELs and cryoEM. ***Current Opinion in Structural Biology.*** 2019."
+  date: '201905'
+  pmid: '29554543'
