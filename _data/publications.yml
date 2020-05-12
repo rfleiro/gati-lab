@@ -50,7 +50,7 @@
 #     - name: Celebratory Tweetstorm by corresponding author First Surname
 #       url: https://twitter.com/mctucsf/status/1172334750205218816
 ---
-- citation: "S Rempel, **C Gati**, M Nijland, C Thangaratnarajah, A Karyolaimos, JW de Gier, A Guskov, DJ Slotboom.
+- citation: "S Rempel, **C Gati**, M Nijland, C Thangaratnarajah, A Karyolaimos, JW de Gier, A Guskov, DJ Slotboom. <br>
 A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds. ***Nature.*** 2020."
   date: '202004'
   image: '/static/img/pub/202004-rv1819c.png'
@@ -76,7 +76,7 @@ A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds. **
   # biorxiv: 'YYYY.MM.DD.######'
 
 - citation: "A Ishchenko, B Stauch, GW Han, A Batyuk, A Shiriaeva, C Li, N Zatsepin, U Weierstall, W Liu, E Nango,
-T Nakane, R Tanaka, K Tono, Y Joti, S Iwata, I Moraes, **C Gati**, V Cherezov.
+T Nakane, R Tanaka, K Tono, Y Joti, S Iwata, I Moraes, **C Gati**, V Cherezov. <br>
 Toward G protein-coupled receptor structure-based drug design using X-ray lasers. ***IUCrJ.*** 2019."
   date: '201911'
   image: '/static/img/pub/201911-gpcr.jpg'
@@ -103,7 +103,7 @@ Toward G protein-coupled receptor structure-based drug design using X-ray lasers
 
 - citation: "B Stauch, LC Johansson, JD McCorvy, N Patel, GW Han, XP Huang, **C Gati**, A Batyuk, ST Slocum,
 A Ishchenko, W Brehm, TA White, N Michaelian, C Madsen, L Zhu, TD Grant, JM Grandner, A Shiriaeva, RHJ Olsen,
-AR Tribo, S Yous, RC Stevens, U Weierstall, V Katritch, BL Roth, W Liu, V Cherezov.
+AR Tribo, S Yous, RC Stevens, U Weierstall, V Katritch, BL Roth, W Liu, V Cherezov. <br>
 Structural basis of ligand recognition at the human MT 1 melatonin receptor. ***Nature.*** 2019."
   date: '201905'
   image: '/static/img/pub/201905-mt1.png'
@@ -119,7 +119,7 @@ Structural basis of ligand recognition at the human MT 1 melatonin receptor. ***
 
 
 - citation: "LC Johansson, B Stauch, JD McCorvy, GW Han, N Patel, XP Huang, A Batyuk, **C Gati**, ST Slocum, C Li, JM Grandner,
-S Hao, RHJ Olsen, AR Tribo, S Zaare, L Zhu, NA Zatsepin, U Weierstall, S Yous, RC Stevens, W Liu, BL Roth, V Katritch, V Cherezov.
+S Hao, RHJ Olsen, AR Tribo, S Zaare, L Zhu, NA Zatsepin, U Weierstall, S Yous, RC Stevens, W Liu, BL Roth, V Katritch, V Cherezov. <br>
 XFEL structures of the human MT2 melatonin receptor reveal the basis of subtype selectivity. ***Nature.*** 2019."
   date: '201905'
   image: '/static/img/pub/201905-mt2.png'
@@ -134,7 +134,7 @@ XFEL structures of the human MT2 melatonin receptor reveal the basis of subtype 
       url: http://cherezov.usc.edu/
 
 
-- citation: "A Ishchenko, **C Gati**, V Cherezov.
+- citation: "A Ishchenko, **C Gati**, V Cherezov. <br>
 Structural biology of G protein-coupled receptors: new opportunities from XFELs and cryoEM. ***Current Opinion in Structural Biology.*** 2019."
   date: '201905'
   pmid: '29554543'
