@@ -4,7 +4,7 @@ layout: default
 group: courses
 ---
 
-# Gati Lab Courses
+# Courses
 
 
 ## S2C2: CryoEM Image Processing Workshop

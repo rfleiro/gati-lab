@@ -1,5 +1,5 @@
 
-### Gati Lab Alumni
+### Lab Alumni
 
 
 {% for alum in site.data.alumni %}

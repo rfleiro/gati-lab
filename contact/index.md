@@ -4,7 +4,7 @@ layout: default
 group: contact
 ---
 
-# Contact the Gati Lab
+# Contact us!
 
 <div class="col-md-4">
 
