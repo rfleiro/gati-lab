@@ -50,7 +50,7 @@
 #     - name: Celebratory Tweetstorm by corresponding author First Surname
 #       url: https://twitter.com/mctucsf/status/1172334750205218816
 ---
-- citation: "S Rempel, **C Gati**, M Nijland, C Thangaratnarajah, A Karyolaimos, JW de Gier, A Guskov, DJ Slotboom. <br>
+- citation: "S Rempel, **C Gati&#42;**, M Nijland, C Thangaratnarajah, A Karyolaimos, JW de Gier, A Guskov&#42;, DJ Slotboom&#42;. <br>
 A mycobacterial ABC transporter mediates the uptake of hydrophilic compounds. ***Nature.*** 2020."
   date: '202004'
   image: '/static/img/pub/202004-rv1819c.png'
@@ -135,6 +135,7 @@ XFEL structures of the human MT2 melatonin receptor reveal the basis of subtype 
 
 
 - citation: "A Ishchenko, **C Gati**, V Cherezov. <br>
-Structural biology of G protein-coupled receptors: new opportunities from XFELs and cryoEM. ***Current Opinion in Structural Biology.*** 2019."
-  date: '201905'
+Structural biology of G protein-coupled receptors: new opportunities from XFELs and cryoEM. ***Current Opinion in Structural Biology.*** 2018."
+  date: '201808'
+  image: '/static/img/pub/201808-COSB.jpg'
   pmid: '29554543'
