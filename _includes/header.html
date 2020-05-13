@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+    <title>{{page.title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="{{ site.description }}">
     <meta name="theme-color" content="#052049">
@@ -29,15 +29,17 @@
 
     <!-- Static navbar -->
     <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #910311">
-      <a class="navbar-brand" href="          "</a>
-        <a href="http://www.slac.stanford.edu"><img class="inline-block navb-icon" src="{{site.baseurl}}/static/img/slac_whitetrans.png" width="240" height="40"></a>
+        <a class="navbar-brand" href="          "</a>
+        <a href="http://www.slac.stanford.edu"><img class="inline-block navb-icon" src="{{site.baseurl}}/static/img/slac_whitetrans.png" ></a>
         <a class="navbar-brand" href="                 "</a>
-        <a href="http://www.stanford.edu"><img class="inline-block navb-icon" src="{{site.baseurl}}/static/img/su_whitetrans.png" width="240" height="55"></a>
+        <a href="http://www.stanford.edu"><img class="inline-block navb-icon" src="{{site.baseurl}}/static/img/su_whitetrans.png" ></a>
+        <a class="navbar-brand" href="                 "</a>
+        <a class="navbar-brand" href="/">{{site.name}} </a>
+
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="                 "</a>
-        <a class="navbar-brand" href="/">{{site.name}}</a>
+
         <div class="navbar-collapse collapse" id="navbarContent">
           <ul class="navbar-nav ml-auto">
             {% for link in site.data.navlinks %}
