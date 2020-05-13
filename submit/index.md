@@ -13,6 +13,8 @@ group: submit
 
 <img class="img-fluid mx-auto d-block" src="{{site.baseurl}}/static/img/news/cryo-recipes.png" alt="S2C2">
 
+**Below the form for submission:**
+
 {<br>
     "grid_preparation": {<br>
       "grid_protein_concentration": 2,<br>
