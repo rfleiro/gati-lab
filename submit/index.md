@@ -6,9 +6,12 @@ group: submit
 
 <br><br>
 
-**Check out our [cryo-recipes database](https://cryo-recipes.slac.stanford.edu), which is an assembly of membrane protein cryoEM structures. We tried to capture everything from purification, over grid preparation, to imaging. We hope this is useful to the community, so please feel free to reach out for feedback.** <br>
+
+**We are excited to announce the launch of our [cryo-recipes database: https://cryo-recipes.slac.stanford.edu](https://cryo-recipes.slac.stanford.edu), which is an assembly of parameters used for the structure determination of membrane proteins by cryoEM. We tried to capture everything from expression systems, biochemical purification conditions, over grid preparation, to imaging conditions and some image processing related numbers. It is currently unfortunately quite outdated, but we hope this is useful to the community, so please feel free to reach out for feedback or volunteer to submit some entries. The database is based on a [github repository](https://github.com/slaclab/cryo-recipes), so submission is welcome either via github or [email](https://gatic.github.io/gati-lab/submit/).** <br>
 
 **To submit an entry, simply copy/paste below, edit and send an email to: cgati (at) stanford.edu**
+
+<img class="img-fluid mx-auto d-block" src="{{site.baseurl}}/static/img/news/cryo-recipes.png" alt="S2C2">
 
 {<br>
     "grid_preparation": {<br>

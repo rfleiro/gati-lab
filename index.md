@@ -12,4 +12,5 @@ We are part of the Biosciences Division at [SLAC National Laboratory.](http://ww
 Research in the lab is focused on the structural biology of important membrane proteins, mainly by single particle cryoEM.
 {: .welcomefont}
 
-Check out our [cryo-recipes database](https://cryo-recipes.slac.stanford.edu)
+Check out our [cryo-recipes database.](https://cryo-recipes.slac.stanford.edu)
+{: .welcomefont}
