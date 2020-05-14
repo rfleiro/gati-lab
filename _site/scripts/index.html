@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Research in the Gati Lab</title>
+    <title>Scripts from the Gati Lab</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="This is the official web page for the Cornelius Gati Lab at SLAC National Lab.">
     <meta name="theme-color" content="#052049">
@@ -46,7 +46,7 @@
               
             
               
-                <li class="nav-item active"><a class="nav-link" href="/research" alt="research"> research<span class="sr-only">(current)</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="/research" alt="research"> research</a></li>
               
             
               
@@ -70,7 +70,7 @@
               
             
               
-                <li class="nav-item"><a class="nav-link" href="/scripts" alt="scripts"> scripts</a></li>
+                <li class="nav-item active"><a class="nav-link" href="/scripts" alt="scripts"> scripts<span class="sr-only">(current)</span></a></li>
               
             
               
@@ -105,7 +105,7 @@
                 
               
                 
-                  <li class = "active"><a href="/research" alt="research"> research</a></li>
+                  <li><a href="/research" alt="research"> research</a></li>
                 
               
                 
@@ -129,7 +129,7 @@
                 
               
                 
-                  <li><a href="/scripts" alt="scripts"> scripts</a></li>
+                  <li class = "active"><a href="/scripts" alt="scripts"> scripts</a></li>
                 
               
                 
@@ -146,38 +146,21 @@
     <div class="container"> -->
 
 
-<h1 id="membrane-protein-structural-biology">Membrane protein structural biology.</h1>
-
 <p><br /><br /></p>
 
-<p>Our main focus is the structure determination of important membrane proteins, with a focus on <a href="http://www.gpcrdb.org">G protein-coupled receptors</a> and solute carriers (SLC). These represent the two largest families of membrane proteins in the human genome and have a broad spectrum of targets for medical treatments.</p>
+<p><strong>Below is a little script I started writing back at the LMB. It visualizes 3D classification jobs from <a href="https://www3.mrc-lmb.cam.ac.uk/relion/index.php?title=Main_Page">RELION</a> and should be compatible with the most recent version (3.1). I tried to keep the script flexible, but it turns out to still be relatively rigid. If something breaks, please feel free to reach out.</strong></p>
 
-<p>The two main techniques of our groups are single particle cryoEM and X-ray crystallography. We deploy standard biochemical purification techniques with various expression systems (mainly <em>P. pastoris</em> and <em>Sf9</em>), followed by a range of different reconstitution techniques:</p>
-<ul>
-  <li>detergent based micelles</li>
-  <li>SMA copolymer nanodiscs</li>
-  <li>conventional (MSP-based) nanodiscs</li>
-  <li>liposomes</li>
-  <li>Lipidic cubic phase (LCP) crystallization</li>
-</ul>
+<p><a href="https://github.com/gatic/gati-lab/blob/master/scripts/class-wiz.py">Download here: class-wiz.py</a></p>
 
-<p>Besides structure determination, we  complement  our studies with various biochemical and biophysical tools, although most of these are carried out by our various collaborators.</p>
+<p><strong>The output PDF file has various flavors of information. It starts with some plots about the convergence behavior:</strong></p>
 
-<p>If you are interested in either of those techniques, or would like to collaborate, please reach out to us!</p>
+<p><img class="img-fluid mx-auto d-block" src="/static/img/scripts/accuracy.png" alt="accuracy" /></p>
 
-<p><br /><br /></p>
+<p><img class="img-fluid mx-auto d-block" src="/static/img/scripts/carpetplot.png" alt="carpet" /></p>
 
-<h2 id="g-protein-coupled-receptors">G protein-coupled receptors</h2>
-<p><br /><br /></p>
+<p><strong>…to histograms about every single column in the last data.star file. The classification sometimes does interesting things, such as classifying particles based on defocus, coordinates etc.</strong></p>
 
-<p><img class="img-fluid mx-auto d-block" src="/static/img/pub/gpcrtree.jpg" alt="GPCRs" height="600" width="600" /></p>
-
-<p><br /><br /></p>
-
-<h2 id="transporters">Transporters</h2>
-<p><br /><br /></p>
-
-<p><img class="img-fluid mx-auto d-block" src="/static/img/pub/rv1819c.jpg" alt="Transporters" height="600" width="600" /></p>
+<p><img class="img-fluid mx-auto d-block" src="/static/img/scripts/histo.png" alt="histo" /></p>
 
 
     </div>

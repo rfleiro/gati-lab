@@ -26,6 +26,10 @@
   link: "/contact"
   group: contact
 
+- name: scripts
+  link: "/scripts"
+  group: scripts
+
 - name: cryo-recipes
   link: "/submit"
   group: submit
