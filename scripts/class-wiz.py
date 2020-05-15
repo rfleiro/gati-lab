@@ -21,7 +21,8 @@ print('--f 		folder path 							(default: current folder)')
 print('--root 		root name 							(default: \'run\')')
 print('--o		output pdf name 						(default: output.pdf)')
 print('--filt 		\'true\' or \'false\' obtain filtered.star file 			(default: false)')
-print('--mic		minimum cutoff for CTFFIND/Gctf resolution estimate 	(default: none)')
+print('--sigmafac 	cutoff for \'filt\', how many sigma above mean 			(default: 1)')
+print('--mic		minimum cutoff for CTFFIND/Gctf resolution estimate 		(default: none)')
 
 folder = '.'
 rootname = 'run'
@@ -29,6 +30,7 @@ output = 'output.pdf'
 plottype = 'bar'
 micfilt = ''
 filtstar = 'false'
+sigmafac = 1
 
 for si, s in enumerate(sys.argv):
 	if s == '--f':
@@ -45,6 +47,9 @@ for si, s in enumerate(sys.argv):
 
 	if s == '--filt':
 		filtstar = sys.argv[si+1]
+
+	if s == '--sigmafac':
+		sigmafac = sys.argv[si+1]
 
 	if s == '--mic':
 		micfilt = sys.argv[si+1]
@@ -332,7 +337,7 @@ checktest = []; labelsY = [];
 for c in check:
 	checkdict[c[:][1][-1]].append(c[:][1][-2])
 for key, value in checkdict.iteritems():
-	hist, bins = np.histogram(value, bins=np.arange(1, int(classes)+2), normed=True)
+	hist, bins = np.histogram(value, bins=np.arange(1, int(classes)+2))#, normed=True)
 	checktest.append(hist)
 	labelsY.append(int(key))
 
@@ -396,7 +401,7 @@ for g in groupnumarraysorted[:,2:]:
 		if i > 0 and count > 0:
 
 			if len(set(g)) == 1:
-				stayed = len(g);
+				stayed = 0;
 				count = 0;
 			if int(ig) == int(g[i-1]):
 				count += 1;
@@ -427,15 +432,6 @@ x1 = np.linspace(0, 0.5, 100)
 plt.figtext(0, 0, 'Gaussian sigma: %s, variance: %s, mean: %s'%(sigma1, variance1, mean1))
 plt.plot(x1,mlab.normpdf(x1, mean1, sigma1))
 pdf.savefig()
-
-########################
-### Throw out particles that change assignments more often than (mu + 2*sigma)
-cutoff = (mean1+(2*sigma1))
-
-for i, score in enumerate(scorelist):
-	if score > cutoff:
-		unwanted.append(i)
-########################
 
 ### Number of assignment changes per iteration
 plt.figure(num=None, dpi=80, facecolor='white')
@@ -500,15 +496,24 @@ for key2, value2 in fincolarray.iteritems():
 		pdf.savefig()
 		#plt.show()
 
-print('Saved all plots in %s'%output)
-pdf.close()
-
 ################################################################### DELETE UNWANTED PARTICLES FROM INITIAL STAR FILE ##FIXME
 
 particcount = 0;
 initstarfile = '%s_it001_data.star'%(rootname)
 a1 = open('%s_filtered.star'%(rootname), 'w')
 if filtstar != 'false' or micfilt != '':
+ ########################
+ print('The mean jump score is: 					%s'%mean1)
+ if sigmafac == 1:
+ 	print('You did not specify a cutoff, I will use a sigma of 1 above mean: %s'%(float(mean1)+(float(sigmafac)*float(sigma1))))
+ if sigmafac != 1:
+ 	print('I will use a cutoff of: 					%s'%(float(mean1)+(float(sigmafac)*float(sigma1))))
+ cutoff = (float(mean1)+(float(sigmafac)*float(sigma1)))
+
+ for i, score in enumerate(scorelist):
+ 	if score > cutoff:
+ 		unwanted.append(i)
+ ########################
  with open(initstarfile, 'rb') as g:
    for m in g:
 	if '@' not in m:
@@ -517,16 +522,20 @@ if filtstar != 'false' or micfilt != '':
 		if micfilt != '':
 			if float(m.split()[rescol]) <= float(micfilt):
 				a1.write(m)
-				print('micfilt')
+				#print('micfilt')
 		if filtstar != 'false':
 			if particcount not in unwanted:
 				a1.write(m)
-				print('nomicfilt')
+				#print('nomicfilt')
 		if filtstar != 'false' and micfilt != '':
 			if float(m.split()[rescol]) <= float(micfilt) and particcount not in unwanted:
 				a1.write(m)
-				print('both')
+				#print('both')
 
 		particcount += 1;
  print('Saved %s_filtered.star file ommitting %s out of %s particles that changed classes too often'%(rootname, len(unwanted), particcount))
 a1.close()
+
+
+print('Saved all plots in %s'%output)
+pdf.close()
