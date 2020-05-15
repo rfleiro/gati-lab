@@ -49,7 +49,6 @@ for si, s in enumerate(sys.argv):
 	if s == '--mic':
 		micfilt = sys.argv[si+1]
 
-
 #### List all files in folder and sort by name
 filesdir = sorted(os.listdir(folder))
 unwanted = [];
@@ -211,7 +210,6 @@ for datafile in iterationlist:
 		micnumdict[key].append(michisto[0].tolist())
 
 ######## Plot rotational and translational accuracy over each iteration
-
 rotationcol = 2; translationcol = 3;
 rotation = np.zeros((int(classes)+1, iterations), dtype=np.double);
 translation = np.zeros((int(classes)+1, iterations), dtype=np.double);
@@ -238,7 +236,6 @@ if len(set(rotation[0])) == 1:
 if len(set(rotation[0])) > 1:
 
 #Rotational
-
 	cmap = plt.get_cmap('jet', int(classes))
 	plt.figure(num=None, dpi=80, facecolor='white')
 	plt.title('RotationalAccuracy', fontsize=16, fontweight='bold')
@@ -330,13 +327,14 @@ pdf.savefig()
 check = check[sortindices]
 #### Jumper analysis
 checkdict = collections.defaultdict(list)
-checktest = [];
+checktest = []; labelsY = [];
 
 for c in check:
 	checkdict[c[:][1][-1]].append(c[:][1][-2])
 for key, value in checkdict.iteritems():
 	hist, bins = np.histogram(value, bins=np.arange(1, int(classes)+2), normed=True)
 	checktest.append(hist)
+	labelsY.append(int(key))
 
 fig = plt.figure(num=None, dpi=80, facecolor='white')
 ax = fig.add_subplot(111)
@@ -345,9 +343,9 @@ plt.xlabel('Class assignment iteration %s'%(int(iterations)-2), fontsize=13)
 plt.ylabel('Class assignment iteration %s'%(int(iterations)-1), fontsize=13)
 plt.grid()
 ticks = np.arange(0, int(classes)+1)
-labels = np.arange(1, int(classes)+2)
-plt.xticks(ticks, labels)
-plt.yticks(ticks, labels)
+labelsX = np.arange(1, int(classes)+2)
+plt.xticks(ticks, labelsX)
+plt.yticks(ticks, labelsY)
 plt.imshow(checktest, aspect='auto', interpolation="nearest", origin='lower')	#FIXME values in box
 cb2 = plt.colorbar(ticks=np.arange(0, 1, 0.1))
 cb2.set_label('Fraction of particles went into group #')
