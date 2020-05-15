@@ -6,7 +6,7 @@ group: scripts
 
 <br><br>
 
-**Below is a script that I started writing back at the LMB. It visualizes 3D classification jobs from [RELION](https://www3.mrc-lmb.cam.ac.uk/relion/index.php?title=Main_Page) and should be compatible with the most recent version (3.1) - in principle it should also work for 2D classes, but I am not willing to take any responsibility :). I tried to keep the script flexible, but if something breaks, please feel free to reach out.**
+**Below is a script that I started writing back at the LMB. It visualizes 3D classification jobs from [RELION](https://www3.mrc-lmb.cam.ac.uk/relion/index.php?title=Main_Page) and should be compatible with the most recent version (3.1). In principle it also works for 2D classification, but some of the labels are a bit hard to read :). I tried to keep the script flexible, but if something breaks, please feel free to reach out.**
 
 [Download here: class-wiz.py](https://github.com/gatic/gati-lab/blob/master/scripts/class-wiz.py)
 
