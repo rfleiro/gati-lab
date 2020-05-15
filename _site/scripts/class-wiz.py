@@ -20,9 +20,8 @@ print('Please specify:')
 print('--f 		folder path 							(default: current folder)')
 print('--root 		root name 							(default: \'run\')')
 print('--o		output pdf name 						(default: output.pdf)')
-print('--plot		\'bar\' or \'line\'  						(default: bar)')
 print('--filt 		\'true\' or \'false\' obtain filtered.star file 			(default: false)')
-print('--mic		minimum resolution for CTFFIND/Gctf resolution estimate 	(default: none)')
+print('--mic		minimum cutoff for CTFFIND/Gctf resolution estimate 	(default: none)')
 
 folder = '.'
 rootname = 'run'
