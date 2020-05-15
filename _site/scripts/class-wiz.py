@@ -9,11 +9,10 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.mlab as mlab
-#import operator
+import operator
 import collections
-#import pylab as P
 import matplotlib.backends.backend_pdf
-from operator import itemgetter
+#from operator import itemgetter
 
 ################INPUT
 
@@ -181,6 +180,8 @@ for datafile in iterationlist:
 							if 'group' in l.split()[i]:
 								colval = int(l.split()[i][-2:])
 							checkarray[particle, i] = colval
+						else:
+							checkarray[particle, i] = 0
 
 					if int(iteration) >= iterations-2:
 					    for i in range(0, len(checklist)-1):
@@ -341,8 +342,8 @@ for key, value in checkdict.iteritems():
 fig = plt.figure(num=None, dpi=80, facecolor='white')
 ax = fig.add_subplot(111)
 plt.title('Class assignment of each particle - last iteration', fontsize=16, fontweight='bold')
-plt.xlabel('Class assignment iteration %s'%(int(iterations)-1), fontsize=13)
-plt.ylabel('Class assignment iteration %s'%(int(iterations)), fontsize=13)
+plt.xlabel('Class assignment iteration %s'%(int(iterations)-2), fontsize=13)
+plt.ylabel('Class assignment iteration %s'%(int(iterations)-1), fontsize=13)
 plt.grid()
 ticks = np.arange(0, int(classes)+1)
 labels = np.arange(1, int(classes)+2)
@@ -356,7 +357,6 @@ pdf.savefig()
 #plt.show()
 
 ######################################################################################################################
-
 ###########################################################################
 #### Class assignments per micrograph of the last iteration
 
@@ -454,62 +454,59 @@ pdf.savefig()
 checkarraysorted = checkarray[sortindices]
 ### Plot histogram of each column in data.star sorted by the class assignments of the last iteration
 histocolarray = collections.defaultdict(list)
+
 for column in checkarraysorted.transpose():
 	lastitgrouparray = collections.defaultdict(list)
 	for ci, col in enumerate(column):
 		lastitgrouparray[groupnumarraysorted[:,-1][ci]-1].append(col)
+		#print groupnumarraysorted[:,-1][ci]-1, ci, col
 	for key, value in lastitgrouparray.iteritems():
 		histocolarray[key].append(value)
+		#print key	#STILL has 0,3,4!!!
+
 
 fincolarray = collections.defaultdict(list)
+
 for key, value in histocolarray.iteritems():
 	for vi, v in enumerate(value):
+		#print key, vi, v					########### LOSING KEY
 		fincolarray[vi].append(v)
 
 for key2, value2 in fincolarray.iteritems():
-	rangeval = []; temp = []; temp2 = [];
+	rangeval = []; temp = []; #temp2 = [];
+
 	for vi2, v2 in enumerate(value2):
 		for v3 in v2:
 			rangeval.append(v3)
+
 	if len(set(rangeval)) > 1:
 	    for vi2, v2 in enumerate(value2):
-		temp.append(v2)
+			temp.append(v2)
 
 	if len(temp) > 0:
 		plt.figure(num=None, dpi=120, facecolor='white')
-		#####
-
-		if plottype == 'line':
-		   for ti, t in enumerate(temp):
-
-			n, bins = np.histogram(t, bins=15, range=(min(rangeval),max(rangeval)), normed=True)
-			ti += 1;
-			plt.plot(bins[:-1], n, linewidth=3, color=cmap(ti), label='Class %s'%ti)
-			plt.legend(loc='best')
-		#####
 
 		if plottype == 'bar':
-			n, bins, patches = plt.hist(temp, bins=15, range=(min(rangeval),max(rangeval)), normed=1, histtype='bar')
-
-			cmap = plt.get_cmap('jet', int(classes))
-			colors = np.arange(0, int(classes))
+			n, bins, patches = plt.hist(temp, range=(min(rangeval),max(rangeval)), histtype='bar')
+			cmap = plt.get_cmap('jet', classes)
+			colors = np.arange(0, classes)
 			for c, p in zip(colors, patches):
-			    d = c+1;
-			    plt.setp(p, 'facecolor', cmap(c))
-			#plt.colorbar(ticks=np.arange(1, int(classes)+1))
+				#d = c+1
+				d = int(histocolarray.keys()[c])		#recolor based on class HACK
+				plt.setp(p, 'facecolor', cmap(d))
 
-		plt.title('Histogram Column %s'%checklistcol[key2], fontsize=16, fontweight='bold')
-		plt.xlabel('%s'%checklistcol[key2], fontsize=13)
+			#plt.colorbar(ticks=np.arange(1, int(classes)+1))
+		plt.title('Histogram Column %s'%checklistcol[int(key2)], fontsize=16, fontweight='bold')
+		plt.xlabel('%s'%checklistcol[int(key2)], fontsize=13)
 		plt.ylabel('# particles per bin', fontsize=13)
 		plt.grid()
-
 		pdf.savefig()
 		#plt.show()
 
 print('Saved all plots in %s'%output)
 pdf.close()
 
-################################################################### DELETE UNWANTED PARTICLES FROM INITIAL STAR FILE
+################################################################### DELETE UNWANTED PARTICLES FROM INITIAL STAR FILE ##FIXME
 
 particcount = 0;
 initstarfile = '%s_it001_data.star'%(rootname)
