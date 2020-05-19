@@ -12,6 +12,7 @@ import matplotlib.mlab as mlab
 import operator
 import collections
 import matplotlib.backends.backend_pdf
+
 #from operator import itemgetter
 
 ################INPUT
@@ -139,8 +140,12 @@ cb1.set_ticks(loc)
 cb1.set_ticklabels(labels)
 cb1.ax.tick_params(labelsize=16)
 cb1.set_label('Class #')
-
 cb1.set_label('Color for each class')
+#cb1.set_label('Class \'0\' means unassigned when using small subset')
+a=ax1.get_xticks().tolist()
+a[0]='no class'
+a[1:-1]=labels[1:-1]
+ax1.set_xticklabels(a)
 
 pdf.savefig()
 #plt.show()
@@ -298,10 +303,14 @@ cb1 = plt.colorbar(mat, ticks=labels)
 loc = labels + .5
 #print loc
 cb1.set_ticks(loc)
-cb1.set_ticklabels(labels)
+a[0]='no class'
+a[1:-1]=labels[1:-1]
+cb1.set_ticklabels(a)
 cb1.ax.tick_params(labelsize=16)
 cb1.set_label('Class #')
 plt.xlim(2, iterations-0.5)
+
+
 pdf.savefig()
 #plt.show()
 
@@ -319,7 +328,9 @@ labels = np.arange(0, classes+2)
 cb1 = plt.colorbar(mat, ticks=labels)
 loc = labels + .5
 cb1.set_ticks(loc)
-cb1.set_ticklabels(labels)
+a[0]='no class'
+a[1:-1]=labels[1:-1]
+cb1.set_ticklabels(a)
 cb1.ax.tick_params(labelsize=16)
 cb1.set_label('Class #')
 plt.xlim(iterations-6.5, iterations-0.5)
