@@ -8,8 +8,8 @@ group: scripts
 
 **Below is a script that I started writing back at the LMB. It visualizes 3D classification jobs from [RELION](https://www3.mrc-lmb.cam.ac.uk/relion/index.php?title=Main_Page) and should be compatible with the most recent version (3.1). In principle it also works for 2D classification, but some of the labels are a bit hard to read :). I tried to keep the script flexible, but if something breaks, please feel free to reach out.**
 
-[Download here: class-wiz.py](https://github.com/gatic/gati-lab/blob/master/scripts/class-wiz.py)
-[Download here: class-wiz.py](https://raw.githubusercontent.com/gatic/gati-lab/master/scripts/class-wiz.py)
+[On GitHub: class-wiz.py](https://github.com/gatic/gati-lab/blob/master/scripts/class-wiz.py) <br>
+[Download script here (right click --> 'Save Link As'): class-wiz.py](https://raw.githubusercontent.com/gatic/gati-lab/master/scripts/class-wiz.py)
 
 **The output PDF file has various flavors of information. It starts with some plots about the convergence behavior:**
 
