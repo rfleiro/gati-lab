@@ -127,14 +127,12 @@ print('Plots will be generated for the following columns:', checklistcol)
 ## Initial colorbar
 fig = plt.figure()
 ax1 = fig.add_axes([0.05, 0.80, 0.9, 0.15])
-
-cmap = plt.get_cmap('jet', int(classes))
-norm = matplotlib.colors.Normalize(vmin=1, vmax=int(classes)+1)
+cmap = plt.get_cmap('jet', int(classes)+1)
+norm = matplotlib.colors.Normalize(vmin=1, vmax=int(classes)+2)
 #ticks = np.arange(1, int(classes)+1)
 cb1 = matplotlib.colorbar.ColorbarBase(ax1, cmap=cmap, norm=norm, orientation='horizontal')
-
 #colorbar stuff
-labels = np.arange(1, classes+1)
+labels = np.arange(0, classes+2)
 #cb1 = plt.colorbar(mat, ticks=labels)
 loc = labels + .5
 cb1.set_ticks(loc)
@@ -171,6 +169,8 @@ for datafile in iterationlist:
      			for l in f:
 	 			if '@' in l:
 					groupnum = l.split()[classcolumn]	## Class number
+					if int(groupnum) > int(classes):
+							groupnum = 0
 					micrograph = l.split()[miccolumn]  	## Micrograph name
 					particlename = l.split()[particolumn] 	## Particle Name
 
@@ -241,16 +241,16 @@ if len(set(rotation[0])) == 1:
 if len(set(rotation[0])) > 1:
 
 #Rotational
-	cmap = plt.get_cmap('jet', int(classes))
+	cmap = plt.get_cmap('jet', int(classes)+1)
 	plt.figure(num=None, dpi=80, facecolor='white')
 	plt.title('RotationalAccuracy', fontsize=16, fontweight='bold')
 	plt.xlabel('Iteration #', fontsize=13)
 	plt.ylabel('RotationalAccuracy', fontsize=13)
 	plt.grid()
-	colors = np.arange(0, int(classes))
+	colors = np.arange(1, int(classes)+1)
 	d = 0;
 	for c, r in zip(colors, rotation):
-		d = c+1
+		d = c
 		plt.plot(r[:], linewidth=3, color=cmap(c), label='Class %s'%d)
 	ticks = np.arange(2, iterations)
 	plt.xlim(2, iterations)
@@ -259,16 +259,16 @@ if len(set(rotation[0])) > 1:
 	#plt.show()
 
 #Translational
-	cmap = plt.get_cmap('jet', int(classes))
+	cmap = plt.get_cmap('jet', int(classes)+1)
 	plt.figure(num=None, dpi=80, facecolor='white')
 	plt.title('TranslationalAccuracy', fontsize=16, fontweight='bold')
 	plt.xlabel('Iteration #', fontsize=13)
 	plt.ylabel('TranslationalAccuracy', fontsize=13)
 	plt.grid()
-	colors = np.arange(0, int(classes))
+	colors = np.arange(1, int(classes)+1)
 	d=0
 	for c, t in zip(colors, translation):
-		d = c+1;
+		d = c;
 		plt.plot(t[:], linewidth=3, color=cmap(c), label='Class %s'%d)
 	ticks = np.arange(2, iterations)
 	plt.xlim(2, iterations)
@@ -284,45 +284,44 @@ groupnumarraysorted = groupnumarray[sortindices]
 
 ### Heat map of group sizes
 H = groupnumarraysorted[:,:]
-cmap = plt.get_cmap('jet', int(classes))
-norm = matplotlib.colors.Normalize(vmin=1, vmax=int(classes)+1)
+cmap = plt.get_cmap('jet', int(classes)+1)
+norm = matplotlib.colors.Normalize(vmin=0, vmax=int(classes)+1)
 plt.figure(num=None, dpi=120, facecolor='white')
 plt.title('Class assignments of each particle', fontsize=16, fontweight='bold')
 plt.xlabel('Iteration #', fontsize=13)
 plt.ylabel('Particle #', fontsize=13)
 mat = plt.imshow(H,aspect='auto', interpolation="nearest", cmap=cmap, norm=norm)
 #colorbar stuff
-labels = np.arange(1, classes+1)
+labels = np.arange(0, classes+2)
+#labels[-1] = 'unassigned'
 cb1 = plt.colorbar(mat, ticks=labels)
 loc = labels + .5
+#print loc
 cb1.set_ticks(loc)
 cb1.set_ticklabels(labels)
 cb1.ax.tick_params(labelsize=16)
 cb1.set_label('Class #')
-
 plt.xlim(2, iterations-0.5)
 pdf.savefig()
 #plt.show()
 
 ### Plot heat map of the last 5 iterations (close-up)
 H = groupnumarraysorted[:,:]
-cmap = plt.get_cmap('jet', int(classes))
-norm = matplotlib.colors.Normalize(vmin=1, vmax=int(classes)+1)
+cmap = plt.get_cmap('jet', int(classes)+1)
+norm = matplotlib.colors.Normalize(vmin=0, vmax=int(classes)+1)
 plt.figure(num=None, dpi=120, facecolor='white')
 plt.title('Class assignments of each particle - last 5 iterations', fontsize=16, fontweight='bold')
 plt.xlabel('Iteration #', fontsize=13)
 plt.ylabel('Particle #', fontsize=13)
 mat = plt.imshow(H, aspect='auto', interpolation="nearest", cmap=cmap, norm=norm)
-
 #colorbar stuff
-labels = np.arange(1, classes+1)
+labels = np.arange(0, classes+2)
 cb1 = plt.colorbar(mat, ticks=labels)
 loc = labels + .5
 cb1.set_ticks(loc)
 cb1.set_ticklabels(labels)
 cb1.ax.tick_params(labelsize=16)
 cb1.set_label('Class #')
-
 plt.xlim(iterations-6.5, iterations-0.5)
 pdf.savefig()
 #plt.show()
@@ -481,11 +480,11 @@ for key2, value2 in fincolarray.iteritems():
 
 		if plottype == 'bar':
 			n, bins, patches = plt.hist(temp, range=(min(rangeval),max(rangeval)), histtype='bar')
-			cmap = plt.get_cmap('jet', classes)
-			colors = np.arange(0, classes)
+			cmap = plt.get_cmap('jet', classes+1)
+			colors = np.arange(0, classes+1)
 			for c, p in zip(colors, patches):
 				#d = c+1
-				d = int(histocolarray.keys()[c])		#recolor based on class HACK
+				d = int(histocolarray.keys()[c])+1		#recolor based on class HACK
 				plt.setp(p, 'facecolor', cmap(d))
 
 			#plt.colorbar(ticks=np.arange(1, int(classes)+1))
