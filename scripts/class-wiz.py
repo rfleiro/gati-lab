@@ -543,6 +543,8 @@ if filtstar != 'false' or micfilt != '':
  print('Saved %s_filtered.star file ommitting %s out of %s particles that changed classes too often'%(rootname, len(unwanted), particcount))
 a1.close()
 
+pdf.close()
+
 print('writing some files')
 
 f=open(folderOUT+"RELION_OUTPUT_NODES.star","w+")
