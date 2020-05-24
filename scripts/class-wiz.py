@@ -18,16 +18,6 @@ import scipy.stats
 #from operator import itemgetter
 
 ################INPUT
-
-#print('Please specify:')
-
-#print('--f 		folder path 							(default: current folder)')
-#print('--root 		root name 							(default: \'run\')')
-#print('--o		output pdf name 						(default: output.pdf)')
-#print('--filt 		\'true\' or \'false\' obtain filtered.star file 			(default: false)')
-#print('--sigmafac 	cutoff for \'filt\', how many sigma above mean 			(default: 1)')
-#print('--mic		minimum cutoff for CTFFIND/Gctf resolution estimate 		(default: none)')
-
 print('running ...')
 parser = argparse.ArgumentParser()
 parser.add_argument("-o", "--output" , "--o", help = "output folder")
@@ -35,18 +25,12 @@ parser.add_argument("--in_parts", "--in_parts", help = "input data.star from 3D 
 parser.add_argument("--micfilt", "--micfilt", help = "filtered.star")
 args, unknown = parser.parse_known_args()
 
-
-#folder = '.'
 folder=os.path.dirname(args.in_parts)+'/'
 folderOUT = args.output
 rootname = 'run'
 
-#output = 'output.pdf'
 output = folderOUT+'3D_convergence_log.pdf'
 plottype = 'bar'
-
-#micfilt = ''
-#filtstar = 'false'
 
 if args.micfilt is not None:
 	micfilt=str(args.micfilt) #micfilter
@@ -57,28 +41,6 @@ else:
 	print('If you want to filter filtered.star file in the parameters tab as --micfilt (full path to file!)')
 
 sigmafac = 1
-
-#for si, s in enumerate(sys.argv):
-#	if s == '--f':
-#		folder = sys.argv[si+1]
-#
-#	if s == '--root':
-#		rootname = sys.argv[si+1]
-#
-#	if s == '--o':
-#		output = sys.argv[si+1]
-#
-#	if s == '--plot':
-#		plottype = sys.argv[si+1]
-#
-#	if s == '--filt':
-#		filtstar = sys.argv[si+1]
-#
-#	if s == '--sigmafac':
-#		sigmafac = sys.argv[si+1]
-#
-#	if s == '--mic':
-#		micfilt = sys.argv[si+1]
 
 #### List all files in input folder and sort by name
 filesdir = sorted(os.listdir(folder))
@@ -287,7 +249,7 @@ if len(set(rotation[0])) > 1:
 	plt.xlim(2, iterations)
 	plt.legend(loc='best')
 	pdf.savefig()
-	plt.show()
+	plt.close()
 	#plt.show()
 
 #Translational
@@ -306,7 +268,7 @@ if len(set(rotation[0])) > 1:
 	plt.xlim(2, iterations)
 	plt.legend(loc='best')
 	pdf.savefig()
-	plt.show()
+	plt.close()
 	#plt.show()
 
 ###########################################################################
@@ -538,7 +500,7 @@ for key2, value2 in fincolarray.iteritems():
 		plt.ylabel('# particles per bin', fontsize=13)
 		plt.grid()
 		pdf.savefig()
-		plt.show()
+		plt.close()
 		#plt.show()
 
 ################################################################### DELETE UNWANTED PARTICLES FROM INITIAL STAR FILE ##FIXME
