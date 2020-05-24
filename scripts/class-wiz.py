@@ -12,50 +12,75 @@ import matplotlib.mlab as mlab
 import operator
 import collections
 import matplotlib.backends.backend_pdf
-
+import argparse
+import scipy
+import scipy.stats
 #from operator import itemgetter
 
 ################INPUT
 
-print('Please specify:')
-print('--f 		folder path 							(default: current folder)')
-print('--root 		root name 							(default: \'run\')')
-print('--o		output pdf name 						(default: output.pdf)')
-print('--filt 		\'true\' or \'false\' obtain filtered.star file 			(default: false)')
-print('--sigmafac 	cutoff for \'filt\', how many sigma above mean 			(default: 1)')
-print('--mic		minimum cutoff for CTFFIND/Gctf resolution estimate 		(default: none)')
+#print('Please specify:')
 
-folder = '.'
+#print('--f 		folder path 							(default: current folder)')
+#print('--root 		root name 							(default: \'run\')')
+#print('--o		output pdf name 						(default: output.pdf)')
+#print('--filt 		\'true\' or \'false\' obtain filtered.star file 			(default: false)')
+#print('--sigmafac 	cutoff for \'filt\', how many sigma above mean 			(default: 1)')
+#print('--mic		minimum cutoff for CTFFIND/Gctf resolution estimate 		(default: none)')
+
+print('running ...')
+parser = argparse.ArgumentParser()
+parser.add_argument("-o", "--output" , "--o", help = "output folder")
+parser.add_argument("--in_parts", "--in_parts", help = "input data.star from 3D classification")
+parser.add_argument("--micfilt", "--micfilt", help = "filtered.star")
+args, unknown = parser.parse_known_args()
+
+
+#folder = '.'
+folder=os.path.dirname(args.in_parts)+'/'
+folderOUT = args.output
 rootname = 'run'
-output = 'output.pdf'
+
+#output = 'output.pdf'
+output = folderOUT+'3D_convergence_log.pdf'
 plottype = 'bar'
-micfilt = ''
-filtstar = 'false'
+
+#micfilt = ''
+#filtstar = 'false'
+
+if args.micfilt is not None:
+	micfilt=str(args.micfilt) #micfilter
+	filtstar= 'true'
+else:
+	micfilt=''
+	filtstar= 'false'
+	print('If you want to filter filtered.star file in the parameters tab as --micfilt (full path to file!)')
+
 sigmafac = 1
 
-for si, s in enumerate(sys.argv):
-	if s == '--f':
-		folder = sys.argv[si+1]
+#for si, s in enumerate(sys.argv):
+#	if s == '--f':
+#		folder = sys.argv[si+1]
+#
+#	if s == '--root':
+#		rootname = sys.argv[si+1]
+#
+#	if s == '--o':
+#		output = sys.argv[si+1]
+#
+#	if s == '--plot':
+#		plottype = sys.argv[si+1]
+#
+#	if s == '--filt':
+#		filtstar = sys.argv[si+1]
+#
+#	if s == '--sigmafac':
+#		sigmafac = sys.argv[si+1]
+#
+#	if s == '--mic':
+#		micfilt = sys.argv[si+1]
 
-	if s == '--root':
-		rootname = sys.argv[si+1]
-
-	if s == '--o':
-		output = sys.argv[si+1]
-
-	if s == '--plot':
-		plottype = sys.argv[si+1]
-
-	if s == '--filt':
-		filtstar = sys.argv[si+1]
-
-	if s == '--sigmafac':
-		sigmafac = sys.argv[si+1]
-
-	if s == '--mic':
-		micfilt = sys.argv[si+1]
-
-#### List all files in folder and sort by name
+#### List all files in input folder and sort by name
 filesdir = sorted(os.listdir(folder))
 unwanted = [];
 
@@ -97,7 +122,7 @@ for files in iterationlist:
 ##Check number of particles, number of classes, number of micrographs
 part = 0; classes = []; micrographlist = []; checklist = []; checklistcol = []; anglerot = []; rescol = [];
 
-with open('%s/%s_it016_data.star'%(folder, rootname), 'rb') as f:
+with open('%s/%s_it016_data.star'%(folder, rootname), 'rb') as f: #THIS CRASHES IF LESS THAN 16 ITERATIONS
 	for l in f:
 		if l[0] == '_' and 10 < len(l) < 50: #check header
 		   if l.split()[0] == '_rlnClassNumber': #check header for ClassNumber column
@@ -148,6 +173,7 @@ a[1:-1]=labels[1:-1]
 ax1.set_xticklabels(a)
 
 pdf.savefig()
+plt.close()
 #plt.show()
 
 ###### Go into each iteration_data.star file and read in information, such as particle class assignments etc.
@@ -261,6 +287,7 @@ if len(set(rotation[0])) > 1:
 	plt.xlim(2, iterations)
 	plt.legend(loc='best')
 	pdf.savefig()
+	plt.show()
 	#plt.show()
 
 #Translational
@@ -279,6 +306,7 @@ if len(set(rotation[0])) > 1:
 	plt.xlim(2, iterations)
 	plt.legend(loc='best')
 	pdf.savefig()
+	plt.show()
 	#plt.show()
 
 ###########################################################################
@@ -312,6 +340,7 @@ plt.xlim(2, iterations-0.5)
 
 
 pdf.savefig()
+plt.close()
 #plt.show()
 
 ### Plot heat map of the last 5 iterations (close-up)
@@ -335,6 +364,7 @@ cb1.ax.tick_params(labelsize=16)
 cb1.set_label('Class #')
 plt.xlim(iterations-6.5, iterations-0.5)
 pdf.savefig()
+plt.close()
 #plt.show()
 
 #########################################################################################################################################################
@@ -347,7 +377,7 @@ checktest = []; labelsY = [];
 for c in check:
 	checkdict[c[:][1][-1]].append(c[:][1][-2])
 for key, value in checkdict.iteritems():
-	hist, bins = np.histogram(value, bins=np.arange(1, int(classes)+2))#, normed=True)
+	hist, bins = np.histogram(value, bins=np.arange(1, int(classes)+2))
 	checktest.append(hist)
 	labelsY.append(int(key))
 
@@ -366,6 +396,7 @@ cb2 = plt.colorbar(ticks=np.arange(0, 1, 0.1))
 cb2.set_label('Fraction of particles went into group #')
 plt.figtext(0, 0, 'Particle class assignment changes in the last iteration')
 pdf.savefig()
+plt.close()
 #plt.show()
 
 ######################################################################################################################
@@ -398,6 +429,7 @@ cb3 = plt.colorbar()
 cb3.set_label('Total number of particles in class #')
 plt.figtext(0, 0, 'Micrographs contributing to certain classes (e.g. important when merging datasets)')
 pdf.savefig()
+plt.close()
 #plt.show()
 
 ###### Find out how often particles are jumping
@@ -433,14 +465,15 @@ plt.ylabel('# of particles with score normalized', fontsize=13)
 plt.grid()
 #histbins = sorted(set(scorelist))
 histbins = np.arange(0, 0.5, 0.05)
-plt.hist(scorelist, bins=histbins, normed=True)
+plt.hist(scorelist, bins=histbins, density=True)
 mean1 = np.mean(scorelist)
 variance1 = np.var(scorelist)
 sigma1 = np.sqrt(variance1)
 #x1 = np.linspace(min(scorelist), max(scorelist), 100)
 x1 = np.linspace(0, 0.5, 100)
 plt.figtext(0, 0, 'Gaussian sigma: %s, variance: %s, mean: %s'%(sigma1, variance1, mean1))
-plt.plot(x1,mlab.normpdf(x1, mean1, sigma1))
+#plt.plot(x1,norm.pdf(x1, mean1, sigma1))
+plt.plot(x1,scipy.stats.norm.pdf(x1, mean1, sigma1))
 pdf.savefig()
 
 ### Number of assignment changes per iteration
@@ -451,6 +484,7 @@ plt.ylabel('# of changed assignments', fontsize=13)
 plt.grid()
 plt.plot(changes[2:])
 pdf.savefig()
+plt.close()
 #plt.show()
 
 #########################################################################################################################################################
@@ -504,6 +538,7 @@ for key2, value2 in fincolarray.iteritems():
 		plt.ylabel('# particles per bin', fontsize=13)
 		plt.grid()
 		pdf.savefig()
+		plt.show()
 		#plt.show()
 
 ################################################################### DELETE UNWANTED PARTICLES FROM INITIAL STAR FILE ##FIXME
@@ -546,6 +581,13 @@ if filtstar != 'false' or micfilt != '':
  print('Saved %s_filtered.star file ommitting %s out of %s particles that changed classes too often'%(rootname, len(unwanted), particcount))
 a1.close()
 
+print('writing some files')
 
-print('Saved all plots in %s'%output)
-pdf.close()
+f=open(folderOUT+"RELION_OUTPUT_NODES.star","w+")
+f.write("data_output_nodes\nloop_\n_rlnPipeLineNodeName #1\n_rlnPipeLineNodeType #2\n"+folderOUT+"/3D_convergence_log.pdf 13")
+f.close()
+
+print('done!')
+
+f=open(folderOUT+"RELION_JOB_EXIT_SUCCESS","w+")
+f.close()
